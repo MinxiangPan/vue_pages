@@ -9,7 +9,6 @@ const domain = 'vue.mattpan.com';
     console.log("Building started...");
     await execa("yarn", ["build"]);
     // Understand if it's dist or build folder
-    const folderName = fs.existsSync("dist") ? "dist" : "build";
     console.log(`Setting custom domain to: ${domain}`);
     fs.writeFile('dist/CNAME', domain, function(err) {});
     console.log("Pushing to gh-pages...");
